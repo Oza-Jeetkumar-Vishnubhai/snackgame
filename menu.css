@@ -1,0 +1,32 @@
+body{
+    margin:0;
+    padding:0;
+    background-image: url(bg.jpg);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+}
+.gamename{
+    text-align: center;
+    padding:20px;
+    font-size:75px;
+}
+.options{
+    text-align: center;
+    font-size: 40px;
+    margin:3px 500px;
+    border:2px solid black;
+    cursor:pointer;
+    background-color: #efefef;
+}
+#num{
+    text-align:center;
+}
+.btn{
+    height:63px;
+    width:100%;
+    font-size:30px;
+    cursor:pointer;
+}
+input{
+    border:3px solid black;
+}
