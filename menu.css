@@ -13,20 +13,16 @@ body{
 .options{
     text-align: center;
     font-size: 40px;
-    margin:3px 500px;
-    border:2px solid black;
-    cursor:pointer;
-    background-color: #efefef;
+    /* border:2px solid black;
+    cursor:pointer; */
+    /* background-color: #efefef; */
 }
 #num{
     text-align:center;
 }
-.btn{
-    height:63px;
-    width:100%;
-    font-size:30px;
-    cursor:pointer;
-}
 input{
     border:3px solid black;
+    text-align: center;
 }
+
+/* button css */

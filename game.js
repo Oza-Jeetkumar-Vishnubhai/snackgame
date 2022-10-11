@@ -2,9 +2,9 @@ var count=-1;
 var arr=[];
 var crashSound=new Audio("crash.mp3");
 var music=new Audio("music.mp3");
-var foodmusic=new Audio("food.mp3");
+// var foodmusic=new Audio("food.mp3");
 function food(){
-    foodmusic.play();
+    // foodmusic.play();
     var x=Math.floor(Math.random()*9+1)*45;
     var y=Math.floor(Math.random()*9+1)*45;
     var css="left:"+x+"px;top:"+y+"px;";
@@ -15,7 +15,7 @@ function food(){
     parent.appendChild(foodvar);
     count=count+1;
     document.getElementsByClassName("score")[0].innerHTML="Score : "+count;
-    document.getElementsByClassName("level")[0].innerHTML="Difficulty Level : "+localStorage.getItem("level");
+    document.getElementsByClassName("level")[0].innerHTML="Level : "+localStorage.getItem("level");
 }
 var i=0;
 var snakeface=document.getElementsByClassName("snakeface")[0];
@@ -35,8 +35,9 @@ foodvar=document.getElementsByClassName("food")[0];
 food();
 var x1;
 var y1;
+var isOn = 1;
 window.addEventListener("keydown",(e)=>{
-    if(e.key==="ArrowRight"||e.key==="ArrowLeft"||e.key==="ArrowUp"||e.key==="ArrowDown"||e.key==="d"||e.key==="a"||e.key==="w"||e.key==="s")
+    if((e.key==="ArrowRight"||e.key==="ArrowLeft"||e.key==="ArrowUp"||e.key==="ArrowDown"||e.key==="d"||e.key==="a"||e.key==="w"||e.key==="s") && isOn)
         music.play();
     switch (e.key) {
         case "ArrowRight":
@@ -98,6 +99,7 @@ function animate(){
     {
         music.pause();
         crashSound.play();
+        isOn=0;
         clearInterval(interval);
         document.getElementsByClassName("gameover")[0].style.display="block";
     }
@@ -105,6 +107,7 @@ function animate(){
     {
         music.pause();
         crashSound.play();
+        isOn=0;
         clearInterval(interval);
         document.getElementsByClassName("gameover")[0].style.display="block";
     }
@@ -118,6 +121,7 @@ function animate(){
         {
             music.pause();
             crashSound.play();
+            isOn=0;
             clearInterval(interval);
             document.getElementsByClassName("gameover")[0].style.display="block";
             break;
